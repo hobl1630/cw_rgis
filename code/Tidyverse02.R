@@ -137,3 +137,4 @@ df_mtcars %>% filter(cyl==6) %>% ggplot(aes(x=wt,y=qsec))+geom_point()
 #ACTUAL - **dont need c() within the summarize()**
 df_mtcars %>% group_by(gear) %>% summarise(avg.wt=mean(wt),avg.qsec=mean(qsec)) %>% ggplot(aes(x=avg.wt,y=avg.qsec))+geom_point()
 
+q()
