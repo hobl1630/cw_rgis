@@ -16,7 +16,7 @@ mtcars_cyl6<-df_mtcars %>% filter(cyl == 6)
 
 # 2. Filter rows where number of gears (`gear`) is either 3 or 5
 
-mtcars_cyl6 %>% filter(gear != 4)
+df_mtcars %>% filter(gear == 3|5)
 
 # Use `%in%` to filter the `df_mtcars` dataset for these two `gear` values.
 
@@ -96,7 +96,7 @@ g_scat<-iris %>% ggplot(aes(x=Sepal.Width, y=Sepal.Length))+geom_point()
 # Create a scatter plot with `Petal.Width` on the x-axis and `Petal.Length` on the y-axis,
 # coloring points by `Species`.
 
-g_scat_col<- iris %>% ggplot(aes(x=Sepal.Width, y=Sepal.Length, fill=Species))+geom_point()
+g_scat_col<- iris %>% ggplot(aes(x=Petal.Width,y=Petal.Length,color=Species))+geom_point()
 
 # 13. Histogram of `Petal.Width` with `binwidth = 0.5`
 # Assign to: `g_hist`
@@ -114,7 +114,7 @@ colnames(PlantGrowth) # output from this code is the column names that can be us
 # Create a boxplot of `weight` by `group`, filling boxes by `group`.
 
 
-g_boxplot1<-PlantGrowth %>% ggplot(aes(x=weight, fill = group))+geom_boxplot()
+g_boxplot1<-PlantGrowth %>% ggplot(aes(x=weight,y=group, fill = group))+geom_boxplot()
 
 # 15. Boxplot + scatter plot of `weight` by `group`
 # Assign to: `g_bplot2`
