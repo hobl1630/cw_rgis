@@ -134,12 +134,12 @@ df_land
 (cu <- cbind(c(0, 1001, 1010, 1100),
              c(0, 0, 0, 1)))
 
-spr_urban <- classify(spr_prec_ncne,
+spr_urban <- classify(spr_land,
          rcl = cu)
 
 values(spr_urban) %>% 
   mean()
-
+#3.169528%
 
 # *Worked Ahead* Raster Data Manipulation ------------------------------------------------
 #Crop - reduce the number of layers in the raster file to defined extent
@@ -229,5 +229,5 @@ ggplot() +
 
 #Stack
 
-#spr_prec_nc <- rast(here("data/spr_prec_nc.tif")) File isnt present
+#spr_prec_nc <- rast(here("data/spr_prec_nc.tif")) File isnt present assigned to spr_merge object
 spr_tmp_nc <- rast(here("data/spr_tmp_nc.tif"))
