@@ -89,13 +89,14 @@ ggplot() +
     as_tibble() %>%
     rename(precipitation = weighted_mean))
 
+
 sf_site_proj <- sf_site %>%
   st_transform(crs = 32617)
 
 sf_site_proj
 
 sf_site_buff_proj <- sf_site_proj %>%
-  st_buffer(dist = 10000)
+  st_buffer(dist = 10000)#defines radius of buffer in meters, because it is projected. Would be degrees otherwise
 
 sf_site_buff_proj
 
@@ -131,4 +132,9 @@ ggplot() +
           aes(color = precipitation)) +
   scale_color_viridis_c() +
   theme_bw()
+#values are of mean of 10 km radius surrounding site not just at the site
+
+sf_site_prec_buff %>% 
+  arrange(desc(precipitation)) %>% 
+  slice(1:3)
 
