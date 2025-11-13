@@ -118,3 +118,11 @@ ggplot() +
   labs(x = "Air Temperature (C)",
        y = "Probability of Occurrence - Lepomis auritus") +
   theme_minimal()
+
+#Final Project -----------------------------------------------------------------
+df_finsync %>% 
+  pull(latin) %>% 
+  unique()
+
+df_finsync %>% 
+  filter(latin == "Ameiurus natalis")
